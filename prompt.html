@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Mini Project</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f2f2f2;
+}
+
+header{
+background:#0d6efd;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+.container{
+width:90%;
+max-width:900px;
+margin:20px auto;
+}
+
+.card{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+h2{
+color:#0d6efd;
+margin-bottom:15px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button{
+background:#0d6efd;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{
+background:#084298;
+}
+
+.result{
+font-size:18px;
+font-weight:bold;
+margin-top:10px;
+color:green;
+}
+
+@media(max-width:600px){
+.card{
+padding:15px;
+}
+button{
+width:100%;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>JavaScript Mini Project</h1>
+<p>Responsive Website</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Student Marks Result</h2>
+
+<input type="number" id="marks" placeholder="Enter Marks">
+
+<button onclick="checkResult()">Check Result</button>
+
+<p id="result" class="result"></p>
+
+</div>
+
+<div class="card">
+
+<h2>Alert Box</h2>
+
+<button onclick="showAlert()">Click Me</button>
+
+</div>
+
+<div class="card">
+
+<h2>Confirm Box</h2>
+
+<button onclick="showConfirm()">Confirm</button>
+
+</div>
+
+<div class="card">
+
+<h2>Prompt Box</h2>
+
+<button onclick="showPrompt()">Try It</button>
+
+</div>
+
+<div class="card">
+
+<h2>Calculator</h2>
+
+<input type="number" id="num1" placeholder="First Number">
+
+<input type="number" id="num2" placeholder="Second Number">
+
+<button onclick="add()">Add</button>
+
+<button onclick="sub()">Subtract</button>
+
+<button onclick="mul()">Multiply</button>
+
+<button onclick="divi()">Divide</button>
+
+<p id="calResult" class="result"></p>
+
+</div>
+
+<div class="card">
+
+<h2>Student Registration</h2>
+
+<input type="text" id="name" placeholder="Name">
+
+<input type="email" id="email" placeholder="Email">
+
+<input type="text" id="mobile" placeholder="Mobile Number">
+
+<button onclick="register()">Submit</button>
+
+<p id="msg" class="result"></p>
+
+</div>
+
+</div>
+
+<script>
+
+function checkResult(){
+
+let m=document.getElementById("marks").value;
+
+let r="";
+
+if(m>=60)
+
+r="First Division";
+
+else if(m>=45)
+
+r="Second Division";
+
+else if(m>=33)
+
+r="Third Division";
+
+else
+
+r="Fail";
+
+document.getElementById("result").innerHTML=r;
+
+}
+
+function showAlert(){
+
+alert("Welcome to JavaScript");
+
+}
+
+function showConfirm(){
+
+if(confirm("Are you sure?"))
+
+alert("You clicked OK");
+
+else
+
+alert("You clicked Cancel");
+
+}
+
+function showPrompt(){
+
+let n=prompt("Enter Your Name");
+
+if(n!="")
+
+alert("Welcome "+n);
+
+}
+
+function add(){
+
+let a=Number(document.getElementById("num1").value);
+
+let b=Number(document.getElementById("num2").value);
+
+document.getElementById("calResult").innerHTML="Answer = "+(a+b);
+
+}
+
+function sub(){
+
+let a=Number(document.getElementById("num1").value);
+
+let b=Number(document.getElementById("num2").value);
+
+document.getElementById("calResult").innerHTML="Answer = "+(a-b);
+
+}
+
+function mul(){
+
+let a=Number(document.getElementById("num1").value);
+
+let b=Number(document.getElementById("num2").value);
+
+document.getElementById("calResult").innerHTML="Answer = "+(a*b);
+
+}
+
+function divi(){
+
+let a=Number(document.getElementById("num1").value);
+
+let b=Number(document.getElementById("num2").value);
+
+document.getElementById("calResult").innerHTML="Answer = "+(a/b);
+
+}
+
+function register(){
+
+let name=document.getElementById("name").value;
+
+let email=document.getElementById("email").value;
+
+let mobile=document.getElementById("mobile").value;
+
+if(name==""||email==""||mobile==""){
+
+alert("Fill all details");
+
+}else{
+
+document.getElementById("msg").innerHTML="Registration Successful";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
